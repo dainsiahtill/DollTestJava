@@ -58,7 +58,7 @@ public class ActionRegister
 		action.code = actionCode;
 		
 		_code2ActionHash.put(actionCode, action);
-		_name2CodeHash.put(action.name, actionCode);
+		_name2CodeHash.put(action.getName(), actionCode);
 	}
 	
 	

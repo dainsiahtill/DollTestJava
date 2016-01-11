@@ -13,14 +13,11 @@ public class Doll
 	
 	private int _manipulation;
 	
-	private IOperator _operator;
-	
 	private BehaviorInterpreter _interpreter;
 	
 	public Doll(String name, IOperator operator) 
 	{
 		_name = name;
-		_operator = operator;
 		
 		_behaviors = new ArrayList<Behavior>();
 		
@@ -46,6 +43,7 @@ public class Doll
 		{
 			Weight weight = WeightUtil.random(WeightUtil.calculateWeights(activites, "weight"));
 			activity = (Activity) weight.data;
+			activity.action.doAction();
 			System.out.println(activity.behavior.getName());
 		}
 		
@@ -64,6 +62,11 @@ public class Doll
 	public int getManipulation()
 	{
 		return _manipulation;
+	}
+	
+	public String getName()
+	{
+		return _name;
 	}
 	
 	public void setManipulation(int value)
