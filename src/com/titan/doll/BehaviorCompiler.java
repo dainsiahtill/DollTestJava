@@ -40,7 +40,9 @@ public class BehaviorCompiler
 		Pattern pattern = Pattern.compile("([a-z]+):([a-zA-Z0-9]+)-([\\d]+)");
 		Matcher matcher = pattern.matcher(line);
 		
-		if (matcher.find() && matcher.groupCount() == 4)
+		boolean isFind = matcher.find();
+		int groupCount = matcher.groupCount();
+		if (isFind && groupCount == 3)
 		{
 			String cmdCode = matcher.group(1);
 			String action = matcher.group(2);
@@ -52,7 +54,7 @@ public class BehaviorCompiler
 				pattern = Pattern.compile("([a-zA-Z0-9]+)-([\\d]+)[\\s]*,[\\s]*([\\d]{1,2}):([\\d]{1,2})-([\\d]{1,2}):([\\d]{1,2})");
 				matcher = pattern.matcher(line);
 				
-				if (matcher.find() && matcher.groupCount() == 7)
+				if (matcher.find() && matcher.groupCount() == 6)
 				{
 					int hourLower = Integer.valueOf(matcher.group(3));
 					int minLower = Integer.valueOf(matcher.group(4));

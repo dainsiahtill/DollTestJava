@@ -82,7 +82,7 @@ public class BehaviorInterpreter
 		
 		Matcher matcher = Pattern.compile("([\\d]{1,2}):([\\d]{1,2})").matcher(time);
 		
-		if (matcher.find() && matcher.groupCount() == 3)
+		if (matcher.find() && matcher.groupCount() == 2)
 		{
 			int lowerTime = hl * 60 + ml;
 			int upperTime = hu * 60 + mu;

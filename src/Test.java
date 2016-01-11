@@ -18,7 +18,7 @@ public class Test
 			@Override
 			public String getCurrentTime() 
 			{
-				return "14:01";
+				return "12:01";
 			}
 		};
 		
@@ -27,9 +27,10 @@ public class Test
 		Doll doll = new Doll("Heyme", operator);
 		ActionRegister.register(new BindingAction("doo", new Object()));
 		ActionRegister.register(new BindingAction("taobao", new Object()));
+		ActionRegister.register(new BindingAction("meal", new Object()));
 		
-		doll.addBehavior(new Behavior("", "alltime:doo-3"));
-		doll.addBehavior(new Behavior("", "intime:meal-20, 11:40-12:50"));
+		doll.addBehavior(new Behavior("doo", "alltime:doo-3"));
+		doll.addBehavior(new Behavior("meal", "intime:meal-20, 11:40-12:50"));
 		
 		for (int i = 0; i < 100; i++) 
 		{
