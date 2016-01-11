@@ -19,7 +19,7 @@ public class Test
 			@Override
 			public String getCurrentTime() 
 			{
-				return "12:01";
+				return "12:41";
 			}
 		};
 		
@@ -46,8 +46,9 @@ public class Test
 			}
 		}));
 		
-		doll.addBehavior(new Behavior("doo", "alltime:doo-3"));
-		doll.addBehavior(new Behavior("meal", "intime:meal-20, 11:40-12:50"));
+		doll.addBehavior(new Behavior("doo", "alltime:doo#3"));
+		doll.addBehavior(new Behavior("meal", "intime:meal#20, 11:40-12:50"));
+		doll.addBehavior(new Behavior("taobao", "intime:taobao#50, 12:40-12:50"));
 		
 		for (int i = 0; i < 100; i++) 
 		{
@@ -56,5 +57,7 @@ public class Test
 		
 		
 	}
+	
+	
 
 }

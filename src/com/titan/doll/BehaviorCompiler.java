@@ -37,7 +37,7 @@ public class BehaviorCompiler
 	{
 		ByteArray bytes = new ByteArray();
 		
-		Pattern pattern = Pattern.compile("([a-z]+):([a-zA-Z0-9]+)-([\\d]+)");
+		Pattern pattern = Pattern.compile("([a-z]+):([a-zA-Z0-9]+)#([\\d]+)");
 		Matcher matcher = pattern.matcher(line);
 		
 		boolean isFind = matcher.find();
@@ -51,7 +51,7 @@ public class BehaviorCompiler
 			
 			if (cmdCode.equals(CODE_IN_TIME))
 			{
-				pattern = Pattern.compile("([a-zA-Z0-9]+)-([\\d]+)[\\s]*,[\\s]*([\\d]{1,2}):([\\d]{1,2})-([\\d]{1,2}):([\\d]{1,2})");
+				pattern = Pattern.compile("([a-zA-Z0-9]+)#([\\d]+)[\\s]*,[\\s]*([\\d]{1,2}):([\\d]{1,2})-([\\d]{1,2}):([\\d]{1,2})");
 				matcher = pattern.matcher(line);
 				
 				if (matcher.find() && matcher.groupCount() == 6)
